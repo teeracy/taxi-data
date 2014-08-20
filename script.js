@@ -28,7 +28,23 @@ $(function() {
 	    	}
 	    intersectionCircle = new google.maps.Circle(circleOptions);
 	    }
+	    for (i = json.length/100; i < (json.length/100 * 2); i++) {
+	    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
+	    	var circleOptions = {
+	    		strokeColor: '#FF0000',
+		      	strokeOpacity: 0.8,
+		      	strokeWeight: 2,
+		      	fillColor: '#FF0000',
+		      	fillOpacity: 0.35,
+		      	map: map,
+		      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
+		      	radius: chances * 100
+	    	}
+	    intersectionCircle = new google.maps.Circle(circleOptions);
+	    }
 	});
 });
+
+
 
 

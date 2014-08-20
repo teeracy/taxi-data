@@ -1,0 +1,12 @@
+$(function() {
+	$.getJSON("intersections-taxi-data.json", function(json) {
+		for (i = 0; i < (json.length/100); i++) {
+			json[i].dropoffs.delete;
+			json[i].dropoffsH.delete;
+			json[i].pickups.delete;
+			json[i].pickupsH.delete;
+			json[i].osm.delete;
+			json[i].geo.delete;
+		}
+	});
+});

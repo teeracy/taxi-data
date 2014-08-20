@@ -3,7 +3,7 @@ var map;
 function initialize() {
   var mapOptions = {
     zoom: 14,
-    center: new google.maps.LatLng(40.732751, -73.922195)
+    center: new google.maps.LatLng(40.731844 , -73.991032)
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -25,7 +25,7 @@ $(function() {
 			      	fillOpacity: 0.35,
 			      	map: map,
 			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
-			      	radius: chances * 100
+			      	radius: chances * 100,
 	    		}
 	    	}	
 	    	intersectionCircle = new google.maps.Circle(circleOptions);

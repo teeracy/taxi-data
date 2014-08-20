@@ -58,5 +58,22 @@ body {
 }
 
 #map-canvas {
-	height: 100%;
+	display: block;
+	margin: 25px auto;
+	height: 750px;
+	width: 750px;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 30px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+h3 {
+	font-size: 30px;
+	margin: 20px;
+	font-family: sans-serif;
+	text-align: center;
 }

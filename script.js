@@ -14,7 +14,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $(function() {
 	$.getJSON("intersections-taxi-data.json", function(json) {
 	    console.log(json); 
-	    for (i = 0; i < (json.length); i++) {
+	    for (i = 0; i < (json.length/100); i++) {
 	    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
 	    	var circleOptions = {
 	    		strokeColor: '#FF0000',

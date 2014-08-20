@@ -14,8 +14,24 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $(function() {
 	$.getJSON("intersections-taxi-data.json", function(json) {
 	    console.log(json); 
-	    for (x = 0; x < 10; i++) {
-		    for (i = json.length/10 * x; i < (json.length/10 * (x + 1)); i++) {
+	    for (i = 0; i < (json.length/5); i++) {
+	    	if (json[i].passEmpties !== undefined && json[i].passFulls !== undefined) {
+		    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
+		    	var circleOptions = {
+		    		strokeColor: '#FF0000',
+			      	strokeOpacity: 0.8,
+			      	strokeWeight: 2,
+			      	fillColor: '#FF0000',
+			      	fillOpacity: 0.35,
+			      	map: map,
+			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
+			      	radius: chances * 100
+	    		}
+	    	}	
+	    	intersectionCircle = new google.maps.Circle(circleOptions);
+	    }
+	    for (i = json.length/5; i < (json.length/5 * 2); i++) {
+	    	if (json[i].passEmpties !== undefined && json[i].passFulls !== undefined) {
 		    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
 		    	var circleOptions = {
 		    		strokeColor: '#FF0000',
@@ -27,9 +43,57 @@ $(function() {
 			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
 			      	radius: chances * 100
 		    	}
+		    }	
 		    intersectionCircle = new google.maps.Circle(circleOptions);
-		    }
 	    }
+	    for (i = json.length/5 * 2; i < (json.length/5 * 3); i++) {
+	    	if (json[i].passEmpties !== undefined && json[i].passFulls !== undefined) {
+		    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
+		    	var circleOptions = {
+		    		strokeColor: '#FF0000',
+			      	strokeOpacity: 0.8,
+			      	strokeWeight: 2,
+			      	fillColor: '#FF0000',
+			      	fillOpacity: 0.35,
+			      	map: map,
+			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
+			      	radius: chances * 100
+		    	}
+		    }
+		    intersectionCircle = new google.maps.Circle(circleOptions);
+	    }
+	    for (i = json.length/5 * 3; i < (json.length/5 * 4); i++) {
+	    	if (json[i].passEmpties !== undefined && json[i].passFulls !== undefined) {
+		    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
+		    	var circleOptions = {
+		    		strokeColor: '#FF0000',
+			      	strokeOpacity: 0.8,
+			      	strokeWeight: 2,
+			      	fillColor: '#FF0000',
+			      	fillOpacity: 0.35,
+			      	map: map,
+			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
+			      	radius: chances * 100
+		    	}
+		    }
+		    intersectionCircle = new google.maps.Circle(circleOptions);
+	    }
+	    for (i = json.length/5 * 4; i < (json.length/5 * 5); i++) {
+	    	if (json[i].passEmpties !== undefined && json[i].passFulls !== undefined) {
+		    	var chances = (json[i].passEmpties) / (json[i].passEmpties + json[i].passFulls)
+		    	var circleOptions = {
+		    		strokeColor: '#FF0000',
+			      	strokeOpacity: 0.8,
+			      	strokeWeight: 2,
+			      	fillColor: '#FF0000',
+			      	fillOpacity: 0.35,
+			      	map: map,
+			      	center: new google.maps.LatLng(json[i].geo.coordinates[1], json[i].geo.coordinates[0]),
+			      	radius: chances * 100
+		    	}
+		    }
+		    intersectionCircle = new google.maps.Circle(circleOptions);
+		}
 	});
 });
 

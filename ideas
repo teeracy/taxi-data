@@ -1,0 +1,8 @@
+- Map with varying sized dot at intersections to show chances of finding an empty cab at a given hour
+	-sliding scale at the top left to change the hour
+	-larger dots means a greater chance of finding an empty cab at an intersection
+- Map with blue lines for empty cab paths and red for filled cab paths
+	-thinner lines show less popular cab paths
+	-thicker lines show more popular cab paths
+	-have red dots to show pickups and blue dots to show dropoffs at intersections
+	
